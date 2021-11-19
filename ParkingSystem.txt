@@ -1,0 +1,32 @@
+package tingchechang;
+
+import java.util.ArrayList;
+
+public class ParkingSystem implements IParking{
+	int[] count=new int[3];
+     public ParkingnSystem(int big,int medium,int small){
+    	 count[0]=big;
+    	 count[1]=medium;
+    	 count[2]=small;
+     }
+	 public boolean addCar(int carType){
+		 if(count[carType-1]>0){
+			 count[carType-1]--;
+			 return true;
+		 }
+		 return false;
+	 }
+	 public void print(){
+		 
+	 }
+	public static void main(String[] args)throws Exception{
+		IParams params=IParking.parse();
+		ParkingSystem ps=new ParkingSystem(params.getBig(),params.getMedium(),params.getSmall());
+		ArrayList<Integer> plan=params.getPlanParking();
+		for(int i=0;i<plan.size();i++){
+			ps.addCar(plan.get(i));
+		}
+		ps.print();
+	}
+
+}
