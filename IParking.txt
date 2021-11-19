@@ -1,0 +1,15 @@
+package tingchechang;
+
+import java.util.ArrayList;
+
+public interface IParking {
+    public void print();
+    public boolean addCar(int carType);
+    public static IParams parse(String str) throws Exception{
+		String[] str1=str.split("\\p");
+		IParams str2=new IParams();
+		
+    	return null;
+    
+    };
+}
